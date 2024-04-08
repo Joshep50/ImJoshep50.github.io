@@ -1,8 +1,7 @@
 # 
 
 [Ver página web (dist)](dist/index.html)
-[Ver página web (dist)](ImJoshep50.github.io
-/dist/index.html)
+[Ver página web (dist)](ImJoshep50.github.io/dist/index.html)
 
 
 [Ver página web (dist)](C:/Users/alfon/Documents/GitHub/ImJoshep50.github.io/dist/index.html)
