@@ -25,6 +25,14 @@ main {
 }
 */
 
+
+h4{
+  font-size: 20px;
+  text-align: center;
+
+  
+}
+
 .contact-info h2 {
   font-size: 15px; 
   font-weight: 50px;
@@ -47,6 +55,8 @@ main {
    text-align: center;
   font-weight: bold; /* Make labels bold */
 }
+
+
 
 
 
@@ -119,18 +129,19 @@ div#contact.jumbotron {
 .navbar-inverse {
   transition: all 0.2s ease-in;
 }
-// Portfolio
-
+// Portfolio Header to include more websites
 .thumbnail {
   cursor: pointer;
   position: relative;
   display: flex;
+  position: fixed;
 }
 
 .thumbnail-svg {
   flex: 1 0 auto;
   padding: .5em;
   max-height: 6em;
+  position: fixed;
 }
 
 .thumbnail-overlay {
@@ -142,12 +153,15 @@ div#contact.jumbotron {
   background: $secondary-color;
   opacity: 0;
   transition: all 0.2s ease-in;
+  position: fixed;
 }
 
 .thumbnail:hover .thumbnail-overlay {
   opacity: 1;
   transition: all 0.2s ease-in;
+  position: fixed;
 }
+
 // Projects Pages
 
 .full-screen {
