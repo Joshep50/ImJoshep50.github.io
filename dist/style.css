@@ -1,6 +1,5 @@
-html,
-body,
-main {
+@charset "UTF-8";
+html, body, main {
   height: 100%;
 }
 
@@ -14,15 +13,6 @@ main {
   color: #fff;
 }
 
-/* edit the whole font of the website
-
-
-.jumbotron p{
-  margin-bottom: 15px;
-    font-size: 21px;
-    font-weight: 200;
-}
-*/
 h6 {
   font-size: 20px;
   text-align: center;
@@ -34,7 +24,6 @@ h6 {
   font-size: 15px;
   font-weight: 50px;
   text-align: center;
-  /* Adjust title size */
 }
 
 .contact-info p {
@@ -49,12 +38,10 @@ h6 {
   font-size: 15px;
   text-align: center;
   font-weight: bold;
-  /* Make labels bold */
 }
 
 div#contact.jumbotron {
   color: #34495e;
-  font-color: #34495e;
 }
 
 .jumbotron {
@@ -101,18 +88,52 @@ div#contact.jumbotron {
   transition: all 0.2s ease-in;
 }
 
+/* Adjusting padding and margin for smaller devices */
+@media (max-width: 767px) {
+  .jumbotron {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .center {
+    position: static;
+    transform: none;
+    text-align: center;
+  }
+
+  .photo-cover {
+    height: auto;
+  }
+
+  .contact-info p, .contact-info .info-label, .contact-info h2 {
+    font-size: 12px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .jumbotron {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+}
+/* General Styling */
 .thumbnail {
   cursor: pointer;
   position: relative;
   display: flex;
-  position: fixed;
 }
 
 .thumbnail-svg {
   flex: 1 0 auto;
   padding: 0.5em;
   max-height: 6em;
-  position: fixed;
 }
 
 .thumbnail-overlay {
@@ -124,13 +145,11 @@ div#contact.jumbotron {
   background: #1abc9c;
   opacity: 0;
   transition: all 0.2s ease-in;
-  position: fixed;
 }
 
 .thumbnail:hover .thumbnail-overlay {
   opacity: 1;
   transition: all 0.2s ease-in;
-  position: fixed;
 }
 
 .full-screen {
@@ -146,4 +165,96 @@ div#contact.jumbotron {
 
 .close-window {
   cursor: pointer;
+}
+
+/* Photoslider el carrusel de fotos */
+.carousel {
+  display: flex;
+  width: 100%;
+  /* Ajusta según sea necesario */
+  height: 500px;
+  /* Ajusta según sea necesario */
+  margin: 0 auto;
+  position: relative;
+  background-color: #34495e;
+}
+
+.carousel-inner > .item > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25px;
+  position: absolute;
+  transition: 3s;
+  /* Asegura que las imágenes cubran el área */
+}
+
+.carousel-inner > .item {
+  height: 500px;
+  /* Ajusta según sea necesario */
+  background-color: #34495e;
+  position: relative;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  cursor: pointer;
+}
+
+.thumbnail-overlay img {
+  width: 50px;
+  height: 50px;
+}
+
+.carousel-inner > .item:hover .thumbnail-overlay {
+  opacity: 1;
+}
+
+.full-screen {
+  background: rgba(0, 0, 0, 0.8);
+  /* Fondo oscuro semi-transparente */
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  /* Oculto inicialmente */
+  overflow-y: auto;
+  /* Permite hacer scroll si la imagen es grande */
+  z-index: 1000;
+  /* Por encima del resto del contenido */
+  text-align: center;
+  /* Centra el contenido horizontalmente */
+}
+
+.full-screen img {
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 5%;
+  /* Ajuste para centrar verticalmente */
+  display: inline-block;
+  /* Permite alineación horizontal */
+}
+
+.close-window {
+  position: absolute;
+  top: 80px;
+  right: 250px;
+  cursor: pointer;
+  font-size: 30px;
+  color: #fff;
+  z-index: 1001;
+  /* Por encima de la imagen */
 }
